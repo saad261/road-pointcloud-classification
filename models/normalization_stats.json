@@ -1,0 +1,9 @@
+{
+  "feature_names": ["local_x", "local_y", "local_z", "red", "green", "blue", "intensity", "planarity", "linearity", "sphericity", "verticality"],
+  "feature_min": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 19092.0, 0.0, 0.0, 0.0, 0.0],
+  "feature_max": [29.999693, 24.903748, 20.389999, 256.0, 256.0, 256.0, 65535.0, 0.99989998, 1.0, 0.75230503, 0.99996734],
+  "max_points": 16661,
+  "class_names": ["2lanes", "3lanes", "crossing", "split4lanes", "split6lanes", "transition"],
+  "stats_scope": "all",
+  "source": "Values printed by the training notebook (cell 'Automated Calculation of Normalization Statistics') for the run that produced simplepointnet_best.pth"
+}

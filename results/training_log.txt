@@ -1,0 +1,53 @@
+--- Starting Grid Search for Hyperparameter Tuning ---
+Total combinations to test: 1
+
+--- Starting Run 1/1 with Hyperparameters ---
+  Learning Rate: 7e-05, Weight Decay: 0.0005, Batch Size: 8, Dropout Rate: 0.4, Epochs: 200
+  Epoch 10/200: Train Loss: 1.0383, Train Acc: 0.6579 | Val Loss: 1.0491, Val Acc: 0.6714
+  Epoch 20/200: Train Loss: 0.7771, Train Acc: 0.7439 | Val Loss: 0.9635, Val Acc: 0.7089
+  Epoch 30/200: Train Loss: 0.5498, Train Acc: 0.8202 | Val Loss: 0.9369, Val Acc: 0.7230
+  Epoch 40/200: Train Loss: 0.3942, Train Acc: 0.8702 | Val Loss: 0.9714, Val Acc: 0.7324
+  Epoch 50/200: Train Loss: 0.2639, Train Acc: 0.9175 | Val Loss: 0.9362, Val Acc: 0.7230
+  Epoch 60/200: Train Loss: 0.2175, Train Acc: 0.9465 | Val Loss: 0.9060, Val Acc: 0.7512
+  Early stopping triggered at epoch 66 due to no validation loss improvement for 30 epochs.
+--- Run 1 Finished. Best Val Accuracy: 0.7606 ---
+New overall best model found (Accuracy: 0.7606) at: grid_search_models\model_run_1.pth
+
+--- Grid Search Complete! ---
+Overall Best Validation Accuracy: 0.7606
+Best Hyperparameters: {'learning_rate': 7e-05, 'weight_decay': 0.0005, 'batch_size': 8, 'dropout_rate': 0.4, 'num_epochs': 200}
+Path to Best Model: grid_search_models\model_run_1.pth
+
+--- Grid Search Results Summary (Sorted by Best Validation Accuracy) ---
+   run_id  learning_rate  weight_decay  batch_size  dropout_rate  num_epochs  final_val_accuracy  best_val_accuracy                          model_path
+0       1        0.00007        0.0005           8           0.4         200            0.746479           0.760563  grid_search_models\model_run_1.pth
+
+--- Evaluating the Overall Best Model on the Test Set ---
+Test Loss: 0.9118, Test Accuracy: 0.7917
+Final evaluation on the test set complete!
+
+Overall Accuracy (sklearn): 0.7917
+Weighted Precision: 0.7948
+Weighted Recall: 0.7917
+Weighted F1-Score: 0.7863
+Weighted IoU (Jaccard Score): 0.6697
+
+Confusion Matrix:
+[[22  1  1  0  0  0]
+ [ 0  9  0  0  0  2]
+ [ 1  1  4  0  0  1]
+ [ 0  0  1  5  1  1]
+ [ 0  0  0  0 12  0]
+ [ 3  2  0  0  0  5]]
+
+Confusion Matrix (Rows: True Class, Columns: Predicted Class):
+True \ Pred | 2lanes     | 3lanes     | crossing   | split4lanes | split6lanes | transition
+-------------------------------------------------------------------------------------------
+2lanes      | 22         | 1          | 1          | 0          | 0          | 0         
+3lanes      | 0          | 9          | 0          | 0          | 0          | 2         
+crossing    | 1          | 1          | 4          | 0          | 0          | 1         
+split4lanes | 0          | 0          | 1          | 5          | 1          | 1         
+split6lanes | 0          | 0          | 0          | 0          | 12         | 0         
+transition  | 3          | 2          | 0          | 0          | 0          | 5
+
+
